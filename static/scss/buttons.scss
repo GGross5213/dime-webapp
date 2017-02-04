@@ -1,0 +1,29 @@
+.button, button{
+  display: inline-block;
+  color: $primaryDark !important;
+  border: 2px solid $primaryDark;
+  padding: 10px 20px;
+  border-radius: $radius;
+  transition: all $transition-time;
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+  margin: 10px 10px 10px 0;
+  background: rgba(0,0,0,0);
+  i{
+    width: 18px;
+  }
+  &:hover{
+    transition: all .2s;
+    background: $primaryDark;
+    color: white !important;
+    i{
+      color: white;
+    }
+  }
+}
+
+button{
+  &:focus{
+    outline: none;
+  }
+}

@@ -5,6 +5,25 @@
   <title>Dime</title>
 </head>
 <body>
-  Login Page
+  <div class="row login-wrapper valign-wrapper">
+    <div class="login-box col l6 s10">
+      <div class="col s12">
+        <img src="img/DimeLogo.png" alt="Dime, Just Give A Dime">
+      </div>
+
+      <label><b>Email</b></label>
+      <input id="email" type="text" placeholder="Enter Email" name="email" required>
+
+      <label><b>Password</b></label>
+      <input id="psw" type="password" placeholder="Enter Password" name="psw" required>
+
+      <button id="submit" type="submit">Login</button>
+      <br>
+      <a class="secondary-link" href="#">Forgot Password?</a>
+    </div>
+  </div>
+
+  <script src="/jquery.min.js"></script>
+  <script src="/materialize.min.js"></script>
   <script src="/login.js"></script>
 </body>
