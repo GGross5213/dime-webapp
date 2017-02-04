@@ -1,2 +1,4 @@
 node_modules/
 .debug
+static/bin/bundle.js
+static/bin/app.css
