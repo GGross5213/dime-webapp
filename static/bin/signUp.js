@@ -11,7 +11,11 @@ var onSignUp = function(){
       username: email,
       email: email,
       password: password
-    })
+    }),
+    'credentials': 'include',
+    'headers': {
+      'Content-Type':'application/json'
+    }
   }).then(function(response){
     return response.json();
   }).then(function(data){

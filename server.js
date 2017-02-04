@@ -7,10 +7,11 @@ import convert from 'koa-convert'
 import session from 'koa-session'
 import router from './middleware/index'
 import {requireAuth} from './middleware/auth'
+import finalHandler from './middleware/finalHandler'
 
 const app = new Koa();
 
-
+app.use(finalHandler())
 app.use(views(`${__dirname}/views`, {
     map: {
         html: 'nunjucks'

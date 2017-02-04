@@ -6,13 +6,13 @@ var onLogin = function(){
     fetch('/login', {
       method: 'POST',
       headers: {
-        'credentials': 'include',
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
         username: email,
         password: psw
-      })
+      }),
+      'credentials': 'include'
     }).then(function(response){
       return response.json();
     }).then(function(data){
@@ -20,8 +20,7 @@ var onLogin = function(){
         console.log('Error!!!!! ', data.message);
       }
       else {
-        console.log(data);
-        window.location.replace(data.url)
+        window.location.replace(data.url);
       }
     })
   }
