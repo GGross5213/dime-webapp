@@ -1,0 +1,81 @@
+$dark-blue: #024873;
+$green: #64bc46;
+
+$ball-size: 1.2rem; // Change size here
+
+@mixin keyframes($animation-name) {
+	@-webkit-keyframes #{$animation-name} {
+		@content;
+	}
+	@-moz-keyframes #{$animation-name} {
+		@content;
+	}
+	@-ms-keyframes #{$animation-name} {
+		@content;
+	}
+	@-o-keyframes #{$animation-name} {
+		@content;
+	}
+	@keyframes #{$animation-name} {
+		@content;
+	}
+}
+
+@mixin animation($str) {
+  -webkit-animation: #{$str};
+  -moz-animation: #{$str};
+  -ms-animation: #{$str};
+  -o-animation: #{$str};
+  animation: #{$str};
+}
+
+.loader {
+  z-index: 10000;
+  height: 100%;
+  width: 100%;
+  @include gradient($primaryLight, $primaryDark);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.ball{
+	display: inline-block;
+	width: $ball-size;
+	height: $ball-size;
+	border-radius: 50%;
+	border: 4px solid $green;
+	&:after{ // This is the shadow
+		content: '';
+		display: block;
+		background-color: rgba(0,0,0,.05);
+		width: $ball-size;
+		height: $ball-size / 6 ;
+		position: relative;
+		border-radius: 50%;
+    margin-left: -3px;
+		margin-top:  $ball-size / 6 +  $ball-size  ;
+  }
+	// Animation Section
+	@include animation('pass 3s 1');
+	animation-iteration-count:infinite;
+	animation-timing-function: cubic-bezier(.8,0,.2,1);
+}
+
+$first: $ball-size / 1.5 ;
+$second: -$ball-size - $ball-size / 1;
+$third: $ball-size / 1.5 ;
+
+@include keyframes(pass) {
+   0% {
+		margin: 0 $first;
+  }
+  50% {
+		margin: 0px $second;
+	}
+  100% {
+		margin: 0 $third;
+  }
+}

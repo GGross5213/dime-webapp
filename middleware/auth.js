@@ -7,12 +7,14 @@ export function requireAuth() {
         const favicon = /favicon\.ico/;
         const js = /\/*\.js/;
         const css = /\/*\.css/;
+        const fonts = /\/*\.woff2*/
         const url = ctx.request.url;
-        const assets = img.test(url) || favicon.test(url) || js.test(url) || css.test(url);
-        if (url == '/login' || assets || url == '/signUp') {
+        const assets = img.test(url) || favicon.test(url) || js.test(url) || css.test(url) || fonts.test(url);
+        if (url == '/login' || assets || url == '/signup') {
             await next();
         }
         else {
+          console.log('Session : ', ctx.session)
             if (ctx.session.sessionToken == null) {
                 //redirect to login
                 ctx.session.url = ctx.request.url;
@@ -31,13 +33,22 @@ export const getLogin = async (ctx) => {
 
 export const postLogin = async (ctx) => {
   const { username, password }  = ctx.request.body;
-  ctx.body = await Parse.User.logIn(username, password).then((user) => {
-    ctx.session.sessionToken = user.getSessionToken();
-    ctx.session.url = null;
-    return { error: false, url:'/'};
+  const response = await Parse.User.logIn(username, password).then((user) => {
+    //ctx.session.sessionToken = user.getSessionToken();
+    //ctx.session.url = null;
+    return {error: false, sessionToken: user.getSessionToken()};
   }, (error) => {
     return { error: true, message: error};
   });
+
+  if(!response.error){
+    ctx.session.sessionToken = response.sessionToken;
+    ctx.body = { error: false, url: '/'};
+    ctx.session.url = null;
+  }
+  else {
+    ctx.body = {error: true, message: response.message};
+  }
 }
 
 export const logout = async (ctx) => {

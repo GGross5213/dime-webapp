@@ -5,10 +5,11 @@ const router = new Router();
 
 router.get('/login', auth.getLogin);
 router.post('/login', auth.postLogin);
-router.get('/signUp', auth.getSignUp);
-router.post('/signUp', auth.postSignUp);
+router.get('/signup', auth.getSignUp);
+router.post('/signup', auth.postSignUp);
 
 router.get('/*', async (ctx) => {
+  console.log('In catch all')
   await ctx.render('index.html');
 })
 

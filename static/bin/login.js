@@ -6,7 +6,8 @@ var onLogin = function(){
     fetch('/login', {
       method: 'POST',
       headers: {
-        'credentials': 'include'
+        'credentials': 'include',
+        'Content-Type': 'application/json'
       },
       body: JSON.stringify({
         username: email,
@@ -19,6 +20,7 @@ var onLogin = function(){
         console.log('Error!!!!! ', data.message);
       }
       else {
+        console.log(data);
         window.location.replace(data.url)
       }
     })

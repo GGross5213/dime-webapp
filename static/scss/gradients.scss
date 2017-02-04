@@ -16,3 +16,14 @@
   background-size: cover;
   background-position: center;
 }
+
+@mixin gradient-mid-cover($top, $mid, $bottom, $url) {
+  background: -moz-linear-gradient(top, $top 0%, $mid 5%, $mid 50%, $bottom 100%), url($url) no-repeat;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, $top), color-stop(5%, $mid), color-stop(95%, $mid), color-stop(100%, $bottom)), url($url) no-repeat;
+  background: -webkit-linear-gradient(top, $top 0%, $mid 5%, $mid 50%, $bottom 100%), url($url) no-repeat;
+  background: -o-linear-gradient(top, $top 0%, $mid 5%, $mid 50%, $bottom 100%), url($url) no-repeat;
+  background: -ms-linear-gradient(top, $top 0%, $mid 5%,$mid 50%, $bottom 100%), url($url) no-repeat;
+  background: linear-gradient(to bottom, $top 0%, $mid 5%, $mid 50%, $bottom 100%), url($url) no-repeat;
+  background-size: cover;
+  background-position: center;
+}

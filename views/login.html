@@ -3,23 +3,39 @@
 <head>
   <link href="/app.css" rel="stylesheet">
   <title>Dime</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+  <script>
+    $(window).on('load', function () {
+      $(".loader").fadeOut("slow");
+    });
+  </script>
 </head>
 <body>
+  <div class="loader">
+    <div class="ball"></div>
+    <div class="ball"></div>
+    <div class="ball"></div>
+    <div class="ball"></div>
+  </div>
   <div class="row login-wrapper valign-wrapper">
-    <div class="login-box col l6 s10">
+    <div class="login-box col l5 m8 s11">
       <div class="col s12">
         <img src="img/DimeLogo.png" alt="Dime, Just Give A Dime">
       </div>
 
-      <label><b>Email</b></label>
-      <input id="email" type="text" placeholder="Enter Email" name="email" required>
+      <div class="col s12">
+        <label><b>Email</b></label>
+        <input id="email" type="email" placeholder="Enter Email" name="email" required>
+        <label><b>Password</b></label>
+        <input id="psw" type="password" placeholder="Enter Password" name="psw" required>
+        <button id="submit" type="submit" class="center-align">Login <i class="fa fa-arrow-right" aria-hidden="true"></i></button>
+      </div>
 
-      <label><b>Password</b></label>
-      <input id="psw" type="password" placeholder="Enter Password" name="psw" required>
-
-      <button id="submit" type="submit">Login</button>
-      <br>
-      <a class="secondary-link" href="#">Forgot Password?</a>
+      <div class="col s12">
+        <a class="secondary-link center-align" href="#">Forgot Password?</a>
+        <a class="secondary-link center-align" href="/signup">Don't Have An Account?</a>
+      </div>
     </div>
   </div>
 
