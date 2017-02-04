@@ -9,7 +9,7 @@ export function requireAuth() {
         const css = /\/*\.css/;
         const url = ctx.request.url;
         const assets = img.test(url) || favicon.test(url) || js.test(url) || css.test(url);
-        if (url == '/login' || assets || url == '/signup') {
+        if (url == '/login' || assets || url == '/signUp') {
             await next();
         }
         else {
@@ -46,7 +46,7 @@ export const logout = async (ctx) => {
 }
 
 export const getSignUp = async (ctx) => {
-  await ctx.render('signUp');
+  await ctx.render('signUp.html');
 }
 
 export const postSignUp = async (ctx) => {
