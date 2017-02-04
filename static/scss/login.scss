@@ -1,16 +1,16 @@
 .login-wrapper{
   min-height: 100vh;
   min-width: 100vw;
-  @include gradient($primaryDark, $primaryLight);
+  $url: 'img/africa.jpg';
+  @include gradient-mid-cover(rgba(255,255,255,.1), rgba(255,255,255,.1), $primaryLight, $url);
 }
 .login-box{
   margin: 0 auto;
-  background: rgba(255,255,255,.9);
+  background: rgba(255,255,255,1);
   padding: 50px !important;
   border-radius: $radius;
   img{
     max-width: 100%;
-    margin: 0 auto;
     padding: 20px 20%;
   }
 }

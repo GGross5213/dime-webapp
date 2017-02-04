@@ -3,8 +3,44 @@
 <head>
   <link href="/app.css" rel="stylesheet">
   <title>Dime</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+  <script>
+    $(window).on('load', function () {
+      $(".loader").fadeOut("slow");
+    });
+  </script>
 </head>
 <body>
-  Sign Up Page
+  <div class="loader">
+    <div class="ball"></div>
+    <div class="ball"></div>
+    <div class="ball"></div>
+    <div class="ball"></div>
+  </div>
+
+  <div class="row login-wrapper valign-wrapper">
+    <div class="login-box col l5 m8 s11">
+      <div class="col s12">
+        <img src="img/DimeLogo.png" alt="Dime, Just Give A Dime">
+      </div>
+
+      <div class="col s12">
+        <label><b>Name</b></label>
+        <input id="name" type="text" placeholder="Enter Name" name="name" required>
+        <label><b>Email</b></label>
+        <input id="email" type="email" placeholder="Enter Email" name="email" required>
+        <label><b>Password</b></label>
+        <input id="psw" type="password" placeholder="Enter Password" name="psw" required>
+        <button id="signup" type="signup" class="center-align">Sign Up <i class="fa fa-arrow-right" aria-hidden="true"></i></button>
+      </div>
+
+      <div class="col s12">
+        <a class="secondary-link center-align" href="/login">Already Have An Account?</a>
+      </div>
+    </div>
+  </div>
+  <script src="/jquery.min.js"></script>
+  <script src="/materialize.min.js"></script>
   <script src="/signUp.js"></script>
 </body>
