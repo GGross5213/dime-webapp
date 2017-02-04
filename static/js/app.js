@@ -11,7 +11,6 @@ import reducer from './reducer'
 import rootSaga from './saga'
 import createSagaMiddleware from 'redux-saga'
 
-import { eventsRequested } from './containers/app/ducks'
 
 const sagaMiddleware = createSagaMiddleware();
 const loggerMiddleware = createLogger();
@@ -25,7 +24,6 @@ const history = syncHistoryWithStore(browserHistory, store);
 
 sagaMiddleware.run(rootSaga);
 
-store.dispatch(eventsRequested());
 
 render(
     <Root store={store} history={history}/>,

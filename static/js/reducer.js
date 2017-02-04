@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux'
 import { routerReducer } from 'react-router-redux'
 
-const EventApp = combineReducers({
+const DimeApp = combineReducers({
     routing: routerReducer
 });
 

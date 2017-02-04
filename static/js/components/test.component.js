@@ -5,3 +5,5 @@ const test = () => (
     Hello World!
   </div>
 );
+
+export default test
