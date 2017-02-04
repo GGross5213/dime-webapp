@@ -6,6 +6,7 @@ import views from 'koa-views'
 import convert from 'koa-convert'
 import session from 'koa-session'
 import router from './middleware/index'
+import {requireAuth} from './middleware/auth'
 
 const app = new Koa();
 
@@ -20,6 +21,7 @@ app.use(bodyParser());
 app.use(convert(session(app)));
 app.use(serve('static/bin'));
 app.keys = ['secret_key'];
+app.use(requireAuth());
 app.use(router.routes())
     .use(router.allowedMethods());
 
