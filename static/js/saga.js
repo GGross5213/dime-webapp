@@ -1,6 +1,5 @@
-//import {appSaga} from './containers/app/ducks'
-
+import {overviewSaga} from './containers/Overview/ducks'
 
 export default function* rootSaga() {
-    //yield appSaga();
+    yield overviewSaga();
 }

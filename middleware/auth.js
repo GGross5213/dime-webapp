@@ -1,4 +1,5 @@
 import Parse from './parse'
+import 'isomorphic-fetch'
 
 export function requireAuth() {
     return async (ctx, next) => {
@@ -80,4 +81,21 @@ export const postSignUp = async (ctx) => {
   else {
     ctx.body = {error: true, message: 'No username or passowrd'};
   }
+}
+
+export const getUser = async (ctx) => {
+  const {sessionToken} = ctx.session;
+  const user = await fetch(Parse.serverUrl + '/users/me', {
+    method: 'GET',
+    headers: {
+      'X-Parse-Application-Id': Parse.APP_ID,
+      'X-Parse-Session-Token': sessionToken
+    },
+    credentials: 'include'
+  }).then(response => response.json());
+
+  const charities = await Parse.Cloud.run('getUserCharityList', {}, {sessionToken});
+
+  ctx.body = {error: false, user, charities};
+
 }
