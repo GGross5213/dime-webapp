@@ -51,6 +51,7 @@
     "start": "node ./bin/run",
     "server": "nodemon ./bin/run",
     "watch": "gulp",
-    "build": "gulp sass browser_js server"
+    "build": "gulp sass browser_js server",
+    "postinstall": "gulp sass browser_js server"
   }
 }
