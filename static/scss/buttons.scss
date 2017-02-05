@@ -27,3 +27,27 @@ button{
     outline: none;
   }
 }
+
+.button-light{
+  display: inline-block;
+  color: white !important;
+  border: 2px solid white;
+  padding: 10px 20px;
+  border-radius: $radius;
+  transition: all $transition-time;
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+  margin: 10px 10px 10px 0;
+  background: rgba(0,0,0,0);
+  i{
+    width: 18px;
+  }
+  &:hover{
+    transition: all .2s;
+    background: white;
+    color: $primaryDark !important;
+    i{
+      color: $primaryDark;
+    }
+  }
+}

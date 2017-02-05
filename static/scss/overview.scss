@@ -1,0 +1,48 @@
+.overview{
+  text-align: center;
+  min-height: 90vh;
+  padding: 80px 0;
+  $url: 'img/africa.jpg';
+  @include gradient(lighten($primaryDark, 20), $primaryDark);
+  color: white;
+  h1{
+    margin: 30px 0 0 0;
+  }
+  h3{
+    margin: 10px 0 30px 0 !important;
+  }
+  a{
+    color: lighten($primaryLight, 10) !important;
+  }
+}
+.donate-overview{
+  text-align: center;
+  min-height: 100vh;
+  padding: 80px 0;
+  $url: 'img/africa.jpg';
+  @include gradient(lighten($primaryDark, 20), $primaryDark);
+  color: white;
+  h1{
+    margin: 30px 0 0 0;
+  }
+  h3{
+    margin: 10px 0 30px 0 !important;
+  }
+  a{
+    color: lighten($primaryLight, 10) !important;
+  }
+}
+.card{
+  height: 360px;
+  .card-image{
+    height: 250px;
+  }
+}
+.card-padding{
+  padding: 0 20px 20px 20px !important;
+  text-align: left;
+  color: black;
+  a{
+    color: $primaryDark !important;
+  }
+}
