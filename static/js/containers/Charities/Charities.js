@@ -6,8 +6,8 @@ class Charities extends Component {
     return (
       <div>
         <div className="overview valign-wrapper">
-          <div className="row full-width">
-            <h1>You're charities</h1>
+          <div className="row full-width row-padded">
+            <h1 className="pad-bottom">You're charities</h1>
 
             <div className="col s12 m6 l4 card-padding">
               <div className="card">

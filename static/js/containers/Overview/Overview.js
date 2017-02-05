@@ -43,7 +43,7 @@ class Overview extends Component {
           <div className="col s12 full-width">
             <h2>You've given</h2>
             <h1 className="">$842.92</h1>
-            <h3><a href="#">$109.86 this week <i className="fa fa-arrow-right" aria-hidden="true"></i></a></h3>
+            <h3><a href="/transactions">$109.86 this week</a></h3>
             <h2>provided <span className="bold">412</span> meals</h2>
             <h2>cleaned <span className="bold">1,318</span> gallons of water</h2>
             <h2>helped <span className="bold">72</span> pets find forever homes</h2>
