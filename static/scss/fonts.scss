@@ -1,5 +1,29 @@
 h1{
+  font-size: 5rem !important;
   font-weight: 200 !important;
+  margin: 10px;
+}
+h2{
+  font-size: 2rem !important;
+  font-weight: 300 !important;
+  margin: 10px !important;
+}
+h3{
+  font-size: 1.2rem !important;
+  font-weight: 400 !important;
+  margin: 10px !important;
+}
+p{
+  margin: 5px;
+  span{
+    font-weight: 600 !important;
+  }
+}
+a{
+  color: $primaryDark !important;
+}
+.bold{
+  font-weight: 400 !important;
 }
 
 .secondary-link{
@@ -13,4 +37,32 @@ h1{
   &:hover{
     color: $primaryDark;
   }
+}
+.section-header{
+  padding: 20px 5%;
+}
+
+.fancy {
+  line-height: .5rem;
+  text-align: center;
+}
+.fancy span {
+  display: inline-block;
+  position: relative;
+}
+.fancy span:before,
+.fancy span:after {
+  content: "";
+  position: absolute;
+  height: 5px;
+  border-bottom: 1px solid $primaryDark;
+  width: 30vw;
+}
+.fancy span:before {
+  right: 100%;
+  margin-right: 15px;
+}
+.fancy span:after {
+  left: 100%;
+  margin-left: 15px;
 }

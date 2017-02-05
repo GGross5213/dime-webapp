@@ -1,0 +1,25 @@
+table{
+  font-size: 1rem;
+}
+thead{
+  background-color:lighten($primaryLight, 16);
+  border: 1px solid $primaryLight !important;
+
+  th{
+    font-size: 1.2rem !important;
+    font-weight: 300 !important;
+  }
+}
+tr{
+  transition: all $transition-time;
+  &:hover{
+    background-color: lighten($primaryLight, 16);
+  }
+}
+th,td{
+  padding-left: 20px !important;
+  padding-right: 20px !important;
+  &:last-child{
+    text-align: right;
+  }
+}
